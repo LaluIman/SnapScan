@@ -22,15 +22,11 @@ class HomeScreen extends StatelessWidget {
             child: Row(
               children: [
                 SizedBox(
-                  width: 50,
-                  height: 50,
+                  width: 60,
+                  height: 60,
                   child: Container(
                     decoration: BoxDecoration(
                         shape: BoxShape.circle,
-                        border: Border.all(
-                            width: 5,
-                            color: Color(0xFF42ADFE),
-                            strokeAlign: BorderSide.strokeAlignOutside),
                         image: DecorationImage(
                             image: AssetImage("assets/images/pp.png"))),
                   ),
@@ -63,12 +59,6 @@ class HomeScreen extends StatelessWidget {
           SizedBox(
             height: 10,
           ),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20),
-            child: Divider(
-              color: Colors.grey.shade300,
-            ),
-          ),
           SizedBox(
             height: 10,
           ),
@@ -81,17 +71,26 @@ class HomeScreen extends StatelessWidget {
                   width: double.infinity,
                   height: 150,
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
+                      borderRadius: BorderRadius.circular(10),
                       image: DecorationImage(
                           image: AssetImage("assets/images/home_banner.png"),
                           fit: BoxFit.cover)),
                 ),
                 SizedBox(height: 20),
-                Text(
-                  "Features",
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700),
+                Row(
+                  children: [
+                    Text("Features", style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold
+                    ),),
+                    SizedBox(width: 30,),
+                    SizedBox(
+                      width: 250,
+                      child: Divider()
+                    )
+                  ],
                 ),
-                SizedBox(height: 10),
+                SizedBox(height: 20),
                 Column(
                   children: [
                     GestureDetector(
@@ -100,9 +99,9 @@ class HomeScreen extends StatelessWidget {
                       },
                       child: Container(
                           width: double.infinity,
-                          height: 100,
+                          height: 130,
                           decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(20),
+                              borderRadius: BorderRadius.circular(10),
                               image: DecorationImage(
                                   image: AssetImage(
                                       "assets/images/scan_button.png"),
@@ -113,8 +112,8 @@ class HomeScreen extends StatelessWidget {
                               children: [
                                 Image.asset(
                                   'assets/images/qrscanner_icon.png',
-                                  width: 50,
-                                  height: 50,
+                                  width: 55,
+                                  height: 55,
                                 ),
                                 SizedBox(
                                   width: 15,
@@ -122,7 +121,7 @@ class HomeScreen extends StatelessWidget {
                                 Text(
                                   "Scan QR Code",
                                   style: TextStyle(
-                                      fontSize: 20,
+                                      fontSize: 25,
                                       fontWeight: FontWeight.w700,
                                       color: Colors.white),
                                 )
@@ -144,8 +143,8 @@ class HomeScreen extends StatelessWidget {
                                 width: double.infinity,
                                 height: 100,
                                 decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(20),
-                                    color: Colors.grey.shade300),
+                                    borderRadius: BorderRadius.circular(10),
+                                    color: Colors.grey.shade200),
                                 child: Center(
                                     child: Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
@@ -161,7 +160,7 @@ class HomeScreen extends StatelessWidget {
                                     Text(
                                       "Create QR Code",
                                       style: TextStyle(
-                                          fontSize: 15,
+                                          fontSize: 17,
                                           fontWeight: FontWeight.w700),
                                     )
                                   ],
@@ -176,8 +175,8 @@ class HomeScreen extends StatelessWidget {
                               width: double.infinity,
                               height: 100,
                               decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(20),
-                                  color: Colors.grey.shade300),
+                                  borderRadius: BorderRadius.circular(10),
+                                  color: Colors.grey.shade200),
                               child: Center(
                                   child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
@@ -193,14 +192,43 @@ class HomeScreen extends StatelessWidget {
                                   Text(
                                     "Send QR Code",
                                     style: TextStyle(
-                                        fontSize: 15,
+                                        fontSize: 17,
                                         fontWeight: FontWeight.w700),
                                   )
                                 ],
                               ))),
-                        )
+                        ),
                       ],
-                    )
+                    ),
+                    SizedBox(height: 10,),
+                    Container(
+                          width: double.infinity,
+                          height: 100,
+                          decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                  color: Colors.grey.shade200),
+                          child: Center(
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Image.asset(
+                                  'assets/images/print.png',
+                                  width: 50,
+                                  height: 50,
+                                ),
+                                SizedBox(
+                                  width: 15,
+                                ),
+                                Text(
+                                  "Print QR Code",
+                                  style: TextStyle(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.w700,
+                                      ),
+                                )
+                              ],
+                            ),
+                          )),
                   ],
                 )
               ],
