@@ -6,7 +6,13 @@ import 'package:qrcode_scanner/UI/qrcode_scanner_screen.dart';
 import 'package:qrcode_scanner/UI/splash_screen.dart';
 
 void main() {
-  runApp(DevicePreview(enabled: true, builder: (context) => const MainApp()));
+  runApp(
+    DevicePreview(
+      defaultDevice: Devices.ios.iPhone13ProMax,
+      devices: [Devices.ios.iPhone13ProMax],
+      enabled: true, builder: (context) => const MainApp()
+    )
+  );
 }
 
 class MainApp extends StatelessWidget {
